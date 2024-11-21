@@ -59,6 +59,16 @@ function updateContainer(){
         read.textContent = book.read == true ? "You have read this book!" : "You have NOT read this book!";
         card.append(read);
 
+        const toggleRead = document.createElement("span");
+        toggleRead.className = "toggle";
+        toggleRead.classList.add(book.read ? "book-read" : "book-not-read");
+        read.append(toggleRead);
+
+        toggleRead.addEventListener("click", () => {
+            book.read = !book.read;
+            updateContainer();
+        });
+
         container.append(card);
     });
 }

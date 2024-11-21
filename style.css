@@ -90,6 +90,28 @@ button:hover{
     align-self: flex-end;
 }
 
+.card .toggle{
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    width: 1rem;
+    height: 1rem;
+    margin-left: 1rem;
+}
+
+.toggle:hover{
+    cursor: pointer;
+}
+
+.book-read{
+    background-image: url(svg/close.svg);
+}
+
+.book-not-read{
+    background-image: url(svg/check.svg);
+}
+
 dialog {
     background-color: rgba(0, 0, 0, 0);
     border: 0;
