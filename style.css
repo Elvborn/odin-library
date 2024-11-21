@@ -79,10 +79,11 @@ button:hover{
 }
 
 .card-delete{
-    position: fixed;
+    position: absolute;
 
     background-image: url("svg/close.svg");
     background-repeat: no-repeat;
+    background-size: 80% 80%;
     background-position: center;
     padding: 1rem;
 
