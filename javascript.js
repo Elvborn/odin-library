@@ -9,6 +9,7 @@ const inputs = document.querySelectorAll("input, select");
 const library = [];
 
 function Book(name, author, pages, read){
+    this.id = Date.now().toString(32) + Math.random().toString(32);
     this.name = name;
     this.author = author;
     this.pages = pages;
@@ -25,26 +26,35 @@ function updateContainer(){
     container.innerHTML = "";
 
     library.forEach(book => {
-        let card = document.createElement("a");
+        const card = document.createElement("div");
         card.classList.add("card");
         card.setAttribute("href", "#");
 
-        let name = document.createElement("p");
+        const deleteBtn = document.createElement("button");
+        deleteBtn.className = "card-delete"
+        card.append(deleteBtn);
+
+        deleteBtn.addEventListener("click", (e) => {
+            library.splice(library.indexOf(book), 1);
+            updateContainer();
+        });
+
+        const name = document.createElement("p");
         name.classList.add("name");
         name.textContent = book.name;
         card.append(name);
 
-        let author = document.createElement("p");
+        const author = document.createElement("p");
         author.classList.add("author");
         author.textContent = book.author;
         card.append(author);
 
-        let pages = document.createElement("p");
+        const pages = document.createElement("p");
         pages.classList.add("pages");
         pages.textContent = "Pages: " + book.pages;
         card.append(pages);
 
-        let read = document.createElement("p");
+        const read = document.createElement("p");
         read.classList.add("read");
         read.textContent = book.read == true ? "You have read this book!" : "You have NOT read this book!";
         card.append(read);
@@ -56,6 +66,8 @@ function updateContainer(){
 addBookToLibrary("The Great Gatsby", "F. Scott Fitzgerald", 180, true);
 addBookToLibrary("Ulysses", "James Joyce", 1000, false);
 addBookToLibrary("In Search of Lost Time", "Marcel Proust", 4300, true);
+
+console.log(library)
 
 dialogBtn.addEventListener("click", () => {
     dialog.showModal();
@@ -71,11 +83,9 @@ form.addEventListener("submit", () => {
         return init;
     }, {});
 
-    console.log(book);
-
     addBookToLibrary(book.name, book.author, book.pages, book.read); 
 
-    // Clear input fields
+    // Clear input fields on submit
     inputs.forEach(input => {
         if(input.id === "read")
             input.value = "false";

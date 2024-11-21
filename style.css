@@ -68,10 +68,6 @@ button:hover{
     align-items: flex-start;
 }
 
-.card:hover{
-    background-color: color-mix(in srgb, var(--secondary-color) 80%, white 20%);
-}
-
 .card .name{
     font-weight: bold;
     font-size: 1.5rem;
@@ -80,6 +76,17 @@ button:hover{
 .card .author{
     font-weight: bold;
     font-style: italic;
+}
+
+.card-delete{
+    position: fixed;
+
+    background-image: url("svg/close.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 1rem;
+
+    align-self: flex-end;
 }
 
 dialog {
