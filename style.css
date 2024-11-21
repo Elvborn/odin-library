@@ -1,0 +1,144 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root{
+    --primary-color: #89A8B2;
+    --secondary-color: #B3C8CF;
+}
+
+body{
+    background-color: #E5E1DA;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#header{    
+    background-color: var(--primary-color);
+    padding: 1rem;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+button{
+    padding: .8rem 2rem;
+    background-color: var(--secondary-color);
+    border: 0;
+    border-radius: 2rem;
+
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: color-mix(in srgb, var(--secondary-color) 80%, white 20%);
+}
+
+#container{
+    width: 80vw;
+    margin: 1rem;
+
+    align-self: center;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.card{
+    background-color: var(--secondary-color);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 5px 5px 10px -10px;
+
+    text-decoration: none;
+    color: black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card:hover{
+    background-color: color-mix(in srgb, var(--secondary-color) 80%, white 20%);
+}
+
+.card .name{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.card .author{
+    font-weight: bold;
+    font-style: italic;
+}
+
+dialog {
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+dialog form{
+    --form-width: clamp(200px, 80%, 500px);
+    margin-left: calc(50vw - var(--form-width) / 2);
+    margin-top: 85px;
+
+    background-color: var(--primary-color);
+    border-radius: 1rem;
+    padding: 2rem;
+
+    width: var(--form-width);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form legend{
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+form .row{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    align-items: center;
+}
+
+form input, select{
+    background-color: var(--secondary-color);
+    padding: .3rem 1rem ;
+    width: 100%;
+
+    border: 0;
+    border-radius: 1rem;
+}
+
+form input:focus{
+    outline: 2px solid white;
+}
+
+dialog .buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons > button{
+    padding: .5rem;
+    width: 10ch;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript.js" defer></script>
+    <title>Project: Library</title>
+</head>
+<body>
+    <div id="header">
+        <button class="add-new">Add new book</button>
+    </div>
+
+    <div id="container">
+
+    </div>
+
+    <dialog>
+        <form method="dialog">
+            <legend>Add book to library</legend>
+
+            <div class="row">
+                <label for="name">Book name</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+
+            <div class="row">
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author" required>
+            </div>
+
+            <div class="row">
+                <label for="pages">Number of pages</label>
+                <input type="number" name="pages" id="pages" required>
+            </div>
+
+            <div class="row">
+                <label for="read">Have you read this book?</label>
+                <select name="read" id="read" required>
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                </select>
+            </div>
+
+            <div class="buttons">
+                <button formmethod="dialog" class="return-button" formnovalidate>Return</button>
+                <button type="submit">Add</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>
