@@ -3,17 +3,18 @@ const dialogBtn = document.querySelector(".add-new");
 const dialog = document.querySelector("dialog");
 const form = document.querySelector("form");
 const returnBtn = document.querySelector(".return-button");
-
 const inputs = document.querySelectorAll("input, select");
 
 const library = [];
 
-function Book(name, author, pages, read){
-    this.id = Date.now().toString(32) + Math.random().toString(32);
-    this.name = name;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book{
+    constructor(name, author, pages, read){
+        this.id = Date.now().toString(32) + Math.random().toString(32);
+        this.name = name;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
 function addBookToLibrary(name, author, pages, read){
